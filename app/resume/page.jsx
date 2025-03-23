@@ -1,6 +1,5 @@
 "use client";
 
-import { m } from "framer-motion";
 import {FaHtml5, 
   FaCss3, 
   FaJs, 
@@ -65,7 +64,7 @@ const experience = {
     {
       company: "SDN Dewi Sartika 2 Bogor",
       position: "Honorary Computer Teacher",
-      duration: "2020-2022"
+      duration: "2020 -2022"
     },
     
   ]
@@ -143,7 +142,7 @@ const skills = {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
+import { motion} from "framer-motion";
 
 const Resume = () => {
   return (
@@ -225,34 +224,47 @@ const Resume = () => {
                 </div>
               </TabsContent>
               <TabsContent value="skills" className="w-full h-full">
-               <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[400px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                    {skills.skillList.map((skill, index) => {
-                      return(
-                        <li key={index}>
-                          <TooltipProvider delayDuration={100}>
-                            <Tooltip>
-                              <TooltipTrigger className="w-full h-[120px] bg-[#1f1d38] rounded-xl flex justify-center items-center group">
-                                <div className="text-6xl group-hover:text-accent
-                                transition-all duration-300">{skill.icon}</div>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p>{skill.name}</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
+      <div className="flex flex-col gap-[30px]">
+        <div className="flex flex-col gap-[30px] text-center xl:text-left">
+          <h3 className="text-4xl font-bold">{skills.title}</h3>
+          <p className="max-w-[400px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+            {skills.skillList.map((skill, index) => {
+              return (
+                <li key={index}>
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger
+                        className="w-full h-[120px] bg-[#1f1d38] rounded-xl flex justify-center items-center group relative overflow-hidden"
+                        onMouseMove={(e) => {
+                          const rect = e.currentTarget.getBoundingClientRect();
+                          const x = e.clientX - rect.left - rect.width / 2;
+                          const y = e.clientY - rect.top - rect.height / 2;
 
-                        </li>
-
-                      );
-                    })}
-                  </ul>
-                </div>
-               </div>
-              </TabsContent>
+                          e.currentTarget.querySelector(".icon-motion").style.transform = `translate(${x / 5}px, ${y / 5}px)`;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.querySelector(".icon-motion").style.transform = "translate(0px, 0px)";
+                        }}
+                      >
+                        <motion.div
+                          className="icon-motion text-6xl group-hover:text-accent transition-all duration-300"
+                        >
+                          {skill.icon}
+                        </motion.div>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{skill.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </TabsContent>
               <TabsContent value="about" className="w-full text-center xl:text-left">
                 <div className="flex flex-col gap-[30px]">
                   <h3 className="text-4xl font-bold">{about.title}</h3>
