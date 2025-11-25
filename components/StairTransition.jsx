@@ -3,30 +3,33 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-import Stairs from "./Stairs";
+import RippleEffect from "./RippleEffect";
 
 const StairTransition = () => {
-    const pathname = usePathname();
+  const pathname = usePathname();
+
   return (
-    <>
     <AnimatePresence mode="wait">
-        <div key={pathname}>
-            <div className="h-screen w-screen fixed top-0 left-0 right-0 pointer-events-none z-40 flex">
-                <Stairs />
-            </div>
-            <motion.div 
-            className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
-            initial={{ opacity: 1 }} 
-            animate={{
+      <motion.div 
+        key={pathname} 
+        className="fixed inset-0 pointer-events-none z-40 flex overflow-hidden"
+      >
+        {/* Ripple Effect */}
+        <RippleEffect />
+
+        {/* Background Transition */}
+        <motion.div 
+          className="fixed inset-0 bg-primary"
+          initial={{ opacity: 1 }} 
+          animate={{
             opacity: 0, 
             transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
-            }}
-           />
-        </div>
+          }}
+          exit={{ opacity: 1 }}
+        />
+      </motion.div>
     </AnimatePresence>
-    </>
-   
-  )
+  );
 }
 
 export default StairTransition;

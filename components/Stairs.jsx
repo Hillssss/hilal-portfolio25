@@ -1,42 +1,39 @@
-import { animate,  motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const stairAnimation = {
-initial:{
-    top: "0%",
-},
-animate: {
-    top: "100%"
-},
-exit: {
-    top: ["100%", "0%"]
-},
+  initial: {
+    y: 0,
+  },
+  animate: {
+    y: "100%",
+  },
+  exit: {
+    y: ["100%", "0%"], // Pergerakan keluar
+  },
 };
 
-const reverseIndex = (index) => {
-    const totalSteps = 6;
-    return totalSteps - index - 1;
-};
+const reverseIndex = (index) => 6 - index - 1;
 
 const Stairs = () => {
   return (
     <>
-    {[...Array(6)].map((_, index)=>{
-        return(<motion.div key={index} 
-            variants={stairAnimation} 
-            initial="initial" 
-            animate="animate" 
-            exit="exit"
-            transition={{
-                duration: 0.4,
-                ease: "easeInOut",
-                delay: reverseIndex(index) * 0.1,
-            }} 
-            className="h-full w-full bg-white relative"
-            />
-        );
-    })}
+      {Array.from({ length: 6 }).map((_, index) => (
+        <motion.div
+          key={index}
+          variants={stairAnimation}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{
+            duration: 0.4,
+            ease: "easeInOut",
+            delay: reverseIndex(index) * 0.1,
+          }}
+          className="h-full w-full bg-accent relative"
+        />
+      ))}
     </>
   );
 };
 
-export default Stairs
+export default Stairs;

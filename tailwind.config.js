@@ -19,7 +19,7 @@ module.exports = {
 		xl: '1200px',
 	},
 	fontFamily: {
-		primary: "var(--font-jetbrainsMono)",
+		primary: "var(--font-bai-jamjuree-extralight)",
 	},
   	extend: {
 		keyframes: {
@@ -37,10 +37,10 @@ module.exports = {
 			"accordion-up": "accordion-up 0.2s ease-out",
 		},
 		colors: {
-			primary: '#272643', 
+			primary: '#0f0f0f', 
 			accent: {
-			  DEFAULT: '#bae8e8', 
-			  hover: '#e3f6f5',
+			  DEFAULT: '#e8e1d1', 
+			  hover: '#3a5422',
 			}
 		  },		  
   	}

@@ -12,7 +12,7 @@ import {SiTailwindcss, SiNextdotjs, SiPostman}from "react-icons/si"
 
 const about = {
   title: "About me",
-  description: "Lorem ipsum dolor sit amet.",
+  description: "A brief insight into who I am and what I do.",
   info: [
     {
       fieldName: "Name",
@@ -49,11 +49,11 @@ const about = {
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My experience',
-  description: "Lorem ipsum dolor sit amet.",
+  description: "Sharing my journey and insights.",
   items: [
     {
       company: "Kawan Secuan",
-      position: "Quality Assurance",
+      position: "Quality Assurance & Web Development",
       duration: "Freelance"
     },
     {
@@ -73,7 +73,7 @@ const experience = {
 const education = {
   icon: '/assets/resume/cap.svg',
   title: 'My education',
-  description: "Lorem ipsum dolor sit amet.",
+  description: "Highlights of my academic journey.",
   items: [
     {
       institution: "Kawah Edukasi",
@@ -94,7 +94,7 @@ const education = {
 
 const skills = {
   title: 'My skills',
-  description: "Lorem ipsum dolor sit amet.",
+  description: "A showcase of my expertise and abilities.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -175,7 +175,7 @@ const Resume = () => {
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                       {experience.items.map((item, index) => {
                         return(
-                          <li key={index} className="bg-[#1f1d38] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
+                          <li key={index} className="bg-[#3a5422] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
                             <span className="text-accent">
                               {item.duration}
                             </span>
@@ -203,7 +203,7 @@ const Resume = () => {
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                       {education.items.map((item, index) => {
                         return(
-                          <li key={index} className="bg-[#1f1d38] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
+                          <li key={index} className="bg-[#3a5422] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
                             <span className="text-accent">
                               {item.duration}
                             </span>
@@ -235,7 +235,7 @@ const Resume = () => {
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger
-                        className="w-full h-[120px] bg-[#1f1d38] rounded-xl flex justify-center items-center group relative overflow-hidden"
+                        className="w-full h-[120px] bg-[#3a5422] rounded-xl flex justify-center items-center group relative overflow-hidden"
                         onMouseMove={(e) => {
                           const rect = e.currentTarget.getBoundingClientRect();
                           const x = e.clientX - rect.left - rect.width / 2;
@@ -274,8 +274,8 @@ const Resume = () => {
                     {
                       return (
                         <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
-                          <span className="text-white/60">{item.fieldName}</span>
-                          <span className="text-xl">{item.fieldValue}</span>
+                          <span className="text-[#3a5422]">{item.fieldName}</span>
+                          <span className="text-xl text-accent">{item.fieldValue}</span>
 
                         </li>
                       );

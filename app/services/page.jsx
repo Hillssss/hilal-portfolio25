@@ -10,28 +10,28 @@ const services = [
     num: "01",
     title: "FrontEnd",
     description: 
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis, sem et scelerisque fringilla, enim neque volutpat diam, non suscipit erat eros et sapien. Nulla odio erat, rutrum eu semper ac, lobortis nec nisi.",
+    "As a Frontend Developer, I specialise in building interactive, responsive and aesthetically pleasing user interfaces for various web platforms. Using modern technologies such as HTML5, Next.js, and Tailwind CSS, I am able to develop websites that are fast, dynamic, and optimised for maximum user experience. In addition to web-based I can also be desktop-based using Electron.JS",
     href:""
   },
   {
     num: "02",
-    title: "BackEnd",
+    title: "UI/UX",
     description: 
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis, sem et scelerisque fringilla, enim neque volutpat diam, non suscipit erat eros et sapien. Nulla odio erat, rutrum eu semper ac, lobortis nec nisi.",
+    "One of my other services is UI/UX with a user-centred design-based approach, I create digital solutions that are not only aesthetically pleasing but also functional and efficient while being committed to delivering elegant, intuitive and innovative digital experiences, ensuring that every product not only looks good but also functions to its full potential.",
     href:""
   },
   {
     num: "03",
     title: "DevOps",
     description: 
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis, sem et scelerisque fringilla, enim neque volutpat diam, non suscipit erat eros et sapien. Nulla odio erat, rutrum eu semper ac, lobortis nec nisi.",
+    "As a DevOps Engineer, I integrate development and operations to create stable, automated, and efficient systems. With CI/CD (Continuous Integration & Continuous Deployment) approach, I ensure the development process is smooth, secure, and scalable.Managing cloud-based infrastructure such as AWS, Google Cloud, and DigitalOcean.",
     href:""
   },
   {
     num: "04",
     title: "Quality Assurance",
     description: 
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis, sem et scelerisque fringilla, enim neque volutpat diam, non suscipit erat eros et sapien. Nulla odio erat, rutrum eu semper ac, lobortis nec nisi.",
+    "I focus on testing and improving software quality to ensure optimal performance, security, and user experience. Using manual testing and automated testing approaches, I help ensure applications are bug-free before they are released to users.Skills & Specialisations: Manual Testing, Automated Testing, API Testing, Bug Tracking & Reporting. ",
     href:""
   }
 ];

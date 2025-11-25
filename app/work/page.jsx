@@ -21,34 +21,45 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
   num: '01',
-  category: 'FrontEnd',
-  title:'Dashboard ASTRAL',
-  description:'Lorem ipsum dolor sit consectetur elite',
+  category: 'Web-Development',
+  title:'Dashboard Bodycam',
+  description:'It is a web-based dashboard equipped with GPS tracking features using mapbox, live streaming using livekit and there are media features uploaded by users through an android-based application in collaboration with Korlantas POLRI.',
   stack: [
-    {name: "Html 5"}, {name: "Css 3"}, {name: "JavaScript"}],
-    image:'/assets/work/thumb1.png',
+    {name: "Html5"}, {name: "Css3"}, {name: "JavaScript"}, {name: "JQuery"}],
+    image:'/assets/work/bodycam.png',
     live:"",
     github:"",
 },
 {
   num: '02',
-  category: 'Back-End',
-  title:'Hands Tracking',
-  description:'Lorem ipsum dolor sit consectetur elite',
+  category: 'Web-Development',
+  title:'Dashboard Astral Smartwatch',
+  description:'Web-based dashboard integrated with a smartwatch that features gps tracking, heart detection through message broker',
   stack: [
-    {name: "Python"}, {name: "MediaPipe"}, {name: "OpenCV"}],
-    image:'/assets/work/thumb2.png',
+    {name: "Html5"}, {name: "Tailwind.CSS"}, {name: "JavaScript"}],
+    image:'/assets/work/astral.png',
     live:"",
     github:"",
 },
 {
   num: '03',
-  category: 'Full-Stack',
-  title:'Car Shoes',
-  description:'Lorem ipsum dolor sit consectetur elite',
+  category: 'Desktop-Development',
+  title:'Scheduler Picker',
+  description:'A desktop-based application that is integrated with the audio record API, where the purpose of building this application is to automatically record according to the desired schedule using the time picker.',
   stack: [
-    {name: "PHP"}, {name: "JavaScript"}, {name: "Css 3"}],
-    image:'/assets/work/thumb3.png',
+    {name: "Electron.js"}, {name: "Tailwind.css"}, {name: "HTML5"}],
+    image:'/assets/work/schedulerr.png',
+    live:"",
+    github:"",
+},
+{
+  num: '04',
+  category: 'Quality Assurance',
+  title:'Web Central Kitchen',
+  description:'I help an application before production stage by identifying and fixing bugs, improving application performance, and ensuring optimal user experience manually.',
+  stack: [
+    {name: "Postman"}, {name: "Spreadsheet"}],
+    image:'/assets/work/QA.png',
     live:"",
     github:"",
 },
@@ -70,12 +81,15 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-            <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+            <div className="text-8xl leading-none font-extrabold text-accent-hover text-outline">
               {project.num}              
             </div>
-            <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-              {project.category} project
+            <h2 className="text-[42px] font-bold leading-none text-accent group-hover:text-accent transition-all duration-500 capitalize">
+              {project.category}
             </h2>
+            <h3 className="text-[28px] text-accent-hover font-semibold leading-none  group-hover:text-accent transition-all duration-500 capitalize">
+              {project.title}
+            </h3>
             <p className="text-white/60">{project.description}</p>
             <ul className="flex gap-4">
               {project.stack.map((item, index) => {

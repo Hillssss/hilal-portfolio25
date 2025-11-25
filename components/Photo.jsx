@@ -23,11 +23,15 @@ const Photo = () => {
                     ease: "easeInOut"},
                 }}
             className="w-[298px] h-[298px] xl:h-[498px] xl:w-[498px] mix-blend-lighten absolute">
-                <Image 
-                src="/assets/photo3.png" 
-                priority quality={100} 
-                fill alt="0" 
-                className="object-contain" /> 
+               <Image 
+  src="/assets/photo3.png" 
+  priority 
+  quality={100} 
+  fill 
+  sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 40vw" 
+  alt="0" 
+  className="object-contain" 
+/>
             </motion.div>
 
             <motion.svg
@@ -39,7 +43,7 @@ const Photo = () => {
                 cx="253"
                 cy="253"
                 r="250"
-                stroke="#e3f6f5"
+                stroke="#3a5422"
                 strokeWidth="4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
