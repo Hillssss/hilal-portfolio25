@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import {FiDownload} from "react-icons/fi"
 
 import Socials from "@/components/Socials";
-import Photo from "@/components/Photo";
+import CircularClock from "@/components/CircularClock";
 import Stats from "@/components/Stats";
 
 const Home = () => {
@@ -14,7 +14,10 @@ const Home = () => {
           <div className="flex flex-col xl:flex-row items-center justify-between xl-pt-8 xl:pb-24">
             <div className="text-center xl:text-left order-2 xl:order-none">
               <span className="text-xl">Software Developer</span>
-            <h1 className="h1 mb-6">Hello I AM <br /> <span className="text-accent-hover">Hilal Hibatullah Agus</span>
+            <h1 className="h1 mb-6 ">Hello I AM <br />  <span
+  className="text-accent-hover"
+  style={{ textShadow: "3px 0 8px gray" }}
+>Hilal Hibatullah Agus</span>
               </h1>
               <p className="max-w-[500px] mb-9 text-white/80">
               Passionate Software Developer with experience in building scalable and high-performance applications. 
@@ -35,9 +38,11 @@ const Home = () => {
                 </div>
               </div>
               </div>
-            <div className="order-1 xl:order-none mb-8 xl:mb-0">
-              <Photo />
+            <div className="order-1 xl:order-none mb-8 xl:mb-0 flex justify-center">
+            <div className="responsive-clock">
+              <CircularClock />
             </div>
+          </div>
           </div>
         </div>
         <Stats />

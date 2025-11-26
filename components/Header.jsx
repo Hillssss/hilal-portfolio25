@@ -11,7 +11,7 @@ const Header = () => {
         <header className="py-8 xl:py-12 text-white">
             <div className="container mx-auto flex justify-between items-center">
                 <Link href="/">
-                <h1 className="text-4xl font-semibold">Hillsss<span className="text-accent">.
+                <h1 className="text-4xl font-semibold text-accent" style={{ textShadow: "0 0 8px accent" }}>Hillsss<span className="text-accent">.
                     </span>
                     </h1>
                 </Link>

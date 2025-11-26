@@ -6,7 +6,9 @@ import {FaHtml5,
   FaJava, 
   FaNodeJs, 
   FaUbuntu, 
-  FaDigitalOcean
+  FaDigitalOcean,
+  FaShopify,
+  FaReact
 }from "react-icons/fa"
 import {SiTailwindcss, SiNextdotjs, SiPostman}from "react-icons/si"
 
@@ -41,7 +43,7 @@ const about = {
     {
       fieldName: "Freelance",
       fieldValue: "Available"
-    }
+    },
     
   ]
 }
@@ -136,6 +138,14 @@ const skills = {
       icon: <SiPostman />,
       name: "Postman",
     },
+    {
+      icon: <FaShopify />,
+      name: "Shopify",
+    },
+    {
+      icon: <FaReact />,
+      name: "React",
+    },
   ]
 }
 
@@ -175,8 +185,8 @@ const Resume = () => {
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                       {experience.items.map((item, index) => {
                         return(
-                          <li key={index} className="bg-[#3a5422] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
-                            <span className="text-accent">
+                          <li key={index} className="bg-[#67e8f9B3] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
+                            <span className="text-black">
                               {item.duration}
                             </span>
                             <h3 className="text-xl max-w-[260px] min-h-[60px]
@@ -184,8 +194,8 @@ const Resume = () => {
                               {item.position}
                             </h3>
                             <div className="flex items-center gap-3">
-                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-white/60">{item.company}</p>
+                              <span className="w-[6px] h-[6px] rounded-full bg-primary"></span>
+                              <p className="text-primary">{item.company}</p>
                             </div>
                           </li>
                         );
@@ -203,8 +213,8 @@ const Resume = () => {
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                       {education.items.map((item, index) => {
                         return(
-                          <li key={index} className="bg-[#3a5422] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
-                            <span className="text-accent">
+                          <li key={index} className="bg-[#67e8f9B3] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 ">
+                            <span className="text-primary">
                               {item.duration}
                             </span>
                             <h3 className="text-xl max-w-[260px] min-h-[60px]
@@ -212,8 +222,8 @@ const Resume = () => {
                               {item.degree}
                             </h3>
                             <div className="flex items-center gap-3">
-                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                              <p className="text-white/60">{item.institution}</p>
+                              <span className="w-[6px] h-[6px] rounded-full bg-primary"></span>
+                              <p className="text-black/60">{item.institution}</p>
                             </div>
                           </li>
                         );
@@ -235,7 +245,7 @@ const Resume = () => {
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger
-                        className="w-full h-[120px] bg-[#3a5422] rounded-xl flex justify-center items-center group relative overflow-hidden"
+                        className="w-full h-[120px] bg-[#67e8f9B3] rounded-xl flex justify-center items-center group relative overflow-hidden"
                         onMouseMove={(e) => {
                           const rect = e.currentTarget.getBoundingClientRect();
                           const x = e.clientX - rect.left - rect.width / 2;
@@ -248,7 +258,7 @@ const Resume = () => {
                         }}
                       >
                         <motion.div
-                          className="icon-motion text-6xl group-hover:text-accent transition-all duration-300"
+                          className="icon-motion text-6xl group-hover:text-primary transition-all duration-300"
                         >
                           {skill.icon}
                         </motion.div>
@@ -274,7 +284,7 @@ const Resume = () => {
                     {
                       return (
                         <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
-                          <span className="text-[#3a5422]">{item.fieldName}</span>
+                          <span className="text-[#67e8f9B3]">{item.fieldName}</span>
                           <span className="text-xl text-accent">{item.fieldValue}</span>
 
                         </li>

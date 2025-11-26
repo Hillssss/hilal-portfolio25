@@ -40,7 +40,7 @@ module.exports = {
 			primary: '#0f0f0f', 
 			accent: {
 			  DEFAULT: '#e8e1d1', 
-			  hover: '#3a5422',
+			 hover: '#67e8f9B3',
 			}
 		  },		  
   	}

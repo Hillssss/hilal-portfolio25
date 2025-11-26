@@ -27,8 +27,8 @@ const projects = [
   stack: [
     {name: "Html5"}, {name: "Css3"}, {name: "JavaScript"}, {name: "JQuery"}],
     image:'/assets/work/bodycam.png',
-    live:"",
-    github:"",
+    live:"https://tacticalcam.nexin.id",
+    github:"http://git.nexin.id/ums-x-nxn/tactical-camera-website-dashboard.git",
 },
 {
   num: '02',
@@ -43,6 +43,34 @@ const projects = [
 },
 {
   num: '03',
+  category: 'Web-Development',
+  title:'Dashboard Ranrikmer',
+  description:'Visual to determine the firing line and heading of the cannon towards the target based on the position of the towing vehicle using next js, integrated with python for backend and using mosquitto broker for realtime data transfer.',
+  stack: [
+    {name: "Next.js"}, {name: "Tailwind"}, {name: "Axios"}, {name: "MQTT"}, {name: "UI Motion"}, {name: "ShadCN UI"}  ],
+    image:'/assets/work/ranrik.png',
+    live:"",
+    github:"http://git.nexin.id/armed/ranrikmer/frontend.git",
+},
+{
+  num: '04',
+  category: 'Web-Development',
+  title: 'Dashboard RPMS',
+  description: 'RPMS is a perimeter monitoring dashboard built with Next.js, integrated with backend APIs via Axios and Mosquitto MQTT to deliver real-time radar detection, gunshot visualization, tactical map rendering, AI-powered camera pages with live feed, object classification, auto counting, and dynamic operational controls—all in one unified tactical interface.',
+  stack: [
+    { name: "Next.js" },
+    { name: "Tailwind" },,
+    { name: "MQTT" },
+    { name: "Axios" },
+    { name: "MapLibre" },
+    { name: "ShadCN UI" }
+  ],
+  image: '/assets/work/rpms.png',
+  live: "",
+  github: "http://git.nexin.id/pussenif/rpms/rpms-frontendweb.git",
+},
+{
+  num: '05',
   category: 'Desktop-Development',
   title:'Scheduler Picker',
   description:'A desktop-based application that is integrated with the audio record API, where the purpose of building this application is to automatically record according to the desired schedule using the time picker.',
@@ -50,10 +78,11 @@ const projects = [
     {name: "Electron.js"}, {name: "Tailwind.css"}, {name: "HTML5"}],
     image:'/assets/work/schedulerr.png',
     live:"",
-    github:"",
+    github:"https://github.com/Hillssss/electron-sr.git",
 },
+
 {
-  num: '04',
+  num: '06',
   category: 'Quality Assurance',
   title:'Web Central Kitchen',
   description:'I help an application before production stage by identifying and fixing bugs, improving application performance, and ensuring optimal user experience manually.',
@@ -102,31 +131,36 @@ const Work = () => {
             </ul>
             <div className="border border-white/20"></div>
             <div className="flex items-center gap-4">
-              <Link href={project.live}>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                      <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Live Project</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </Link>
-              <Link href={project.github}>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                      <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Github repository</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </Link>
-            </div>
+  {project.live && (
+    <Link href={project.live}>
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+            <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Live Project</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </Link>
+  )}
+
+  {project.github && (
+    <Link href={project.github}>
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+            <BsGithub className="text-white text-3xl group-hover:text-accent" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Github repository</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </Link>
+  )}
+</div>
             </div>
           </div>
           <div className="w-full xl:w-[50%]">
