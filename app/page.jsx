@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import {FiDownload} from "react-icons/fi"
 
 import Socials from "@/components/Socials";
-import CircularClock from "@/components/CircularClock";
+import dynamic from "next/dynamic";
+
 import Stats from "@/components/Stats";
+const CircularClock = dynamic(() => import('@/components/CircularClock'), { ssr: false });
 
 const Home = () => {
   return (
