@@ -15,8 +15,8 @@ export async function POST(req) {
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT), // Pastikan port dalam bentuk angka
-      secure: false, // true untuk port 465, false untuk lainnya
+      port: 465,
+      secure: true, // true untuk port 465, false untuk lainnya
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -71,9 +71,10 @@ export async function POST(req) {
         </div>
       `,
     });
-
+   ;
     return NextResponse.json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
+     console.error("MAIL ERROR:", error)
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
