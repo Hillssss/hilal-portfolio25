@@ -74,7 +74,9 @@ export async function POST(req) {
    ;
     return NextResponse.json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
-     console.error("MAIL ERROR:", error)
+     console.error("MAIL ERROR:", error);
+     console.log("ENV:", process.env.SMTP_HOST, process.env.SMTP_PORT);
+
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
