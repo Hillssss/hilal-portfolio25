@@ -120,10 +120,10 @@ const Work = () => {
               {project.title}
             </h3>
             <p className="text-white/60">{project.description}</p>
-            <ul className="flex gap-4">
+            <ul className="flex gap-2 flex-wrap">
               {project.stack.map((item, index) => {
                 return (
-                  <li key={index} className="text-xl text-accent">
+                  <li key={index} className="text-l text-accent">
                     {item.name},
                   </li>
                 );

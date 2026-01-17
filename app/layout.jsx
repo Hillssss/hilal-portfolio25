@@ -14,8 +14,8 @@ const baiJamjuree = Bai_Jamjuree({
 });
 
 export const metadata = {
-  title: 'My Portfolio',
-  description: 'Created with Next.js',
+  title: 'Hilllsss',
+  description: 'Portfolio website of Hilal Hibatullah Agus',
 };
 
 export default function RootLayout({ children }) {

@@ -1,19 +1,16 @@
 "use client";
 
-import {BsArrowDownRight} from "react-icons/bs";
-import Link from "next/link";
+
 import { BsCodeSlash } from "react-icons/bs";
 import { HiOutlineColorSwatch } from "react-icons/hi";
 import { FiServer } from "react-icons/fi";
 import { MdOutlineBugReport } from "react-icons/md";
-
-
 import { motion } from "framer-motion";
 
 const services = [
   {
     num: "01",
-    title: "FrontEnd",
+    title: "Front - End",
     description: 
     "As a Frontend Developer, I specialise in building interactive, responsive and aesthetically pleasing user interfaces for various web platforms. Using modern technologies such as HTML5, Next.js, and Tailwind CSS, I am able to develop websites that are fast, dynamic, and optimised for maximum user experience. In addition to web-based I can also be desktop-based using Electron.JS",
      icon: BsCodeSlash,
@@ -42,43 +39,109 @@ const services = [
 ];
 
 
-const Services = () => {
-  return (
-    <section className="min-h[80vh] flex flex-col justify-center py-12 xl:py-0">
-      <div className="container mx-auto">
-        <motion.div
-        initial={{opacity: 0}}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 2.4,
-            duration: 0.4,
-            ease: "easeIn",
-          },
-        }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+        const Services = () => {
+          return (
+            <section className="min-h-[60vh] py-10 ">
+              <div className="container mx-auto">
+                <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 2.2,
+              duration: 0.6,
+              ease: "easeOut",
+            },
+          }}
+          className="
+            grid grid-cols-1
+            md:grid-cols-4
+            rows-[minmax(240px)]
+            gap-4
+          "
         >
-          {services.map((services, index) => {
-            return (
-              <div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
-                <div className="w-full flex justify-between items-center">
-                  <div className="text-5xl font-extrabold text-outline text-[#67e8f9B3] group-hover:text-outline-hover transition-all duration-500">{services.num}</div>
-                  <div className="w-[70px] h-[70px] rounded-full bg-white 
-group-hover:bg-accent transition-all duration-500 
-flex justify-center items-center hover:-rotate-12">
-  
-  <services.icon className="text-primary text-3xl" />
 
+          {services.map((service, index) => {
+            const isLarge = index === 0 || index === 3;
+
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 200, damping: 22 }}
+                className={`
+                  relative group rounded-2xl overflow-hidden
+                  bg-white/[0.04]
+                  border border-white/[0.08]
+                  hover:border-white/[0.18]
+                  shadow-sm hover:shadow-xl hover:shadow-black/30
+                  transition-all duration-500
+
+                  ${isLarge
+                    ? "md:col-span-4 md:row-span-2"
+                    : "md:col-span-2"}
+                `}
+              >
+                {/* soft gradient overlay */}
+                <div className="
+                  absolute inset-0
+                  bg-gradient-to-br
+                  from-white/[0.06]
+                  via-transparent
+                  to-transparent
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-500
+                " />
+
+                {/* subtle blur depth */}
+                <div className="
+                  absolute -top-20 -right-20
+                  w-48 h-48
+                  bg-white/[0.06]
+                  rounded-full blur-3xl
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-700
+                " />
+
+                {/* content */}
+                <div className="relative h-full p-6 flex flex-col gap-4">
+
+                  
+                  {/* header block */}
+               <div className="flex items-start justify-between">
+  <div className="flex flex-col gap-2">
+    {/* number + garis */}
+    <div className="flex flex-col gap-1">
+      <span
+        className="text-4xl font-bold leading-none"
+        style={{ color: "#67e8f9B3" }}
+      >
+        {service.num}
+      </span>
+    </div>
+
+    {/* title */}
+    <h3 className="text-xl font-semibold leading-tight"
+     style={{ color: "#e8e1d1" }}
+     >
+      {service.title}
+    </h3>
+  </div>
+
+  <service.icon className="text-white/80 text-3xl" />
 </div>
 
+
+                  {/* description */}
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{services.title}</h2>
-                <p className="text-white/60">{services.description}</p>
-                <div className="border-b border-white/20 w-full"></div>
-              </div>
+              </motion.div>
             );
           })}
-          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

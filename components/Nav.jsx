@@ -5,7 +5,7 @@ const links = [
   { name: "home", path: "home" },
   { name: "services", path: "services" },
   { name: "work", path: "work" },
-  { name: "contact", path: "contact" },
+  { name: "resume", path: "resume" },
 ];
 
 const Nav = () => {

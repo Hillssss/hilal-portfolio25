@@ -18,13 +18,14 @@ const Home = () => {
             <div className="text-center xl:text-left order-2 xl:order-none">
              <div className="mb-4 flex justify-center xl:justify-start">
                <motion.div
-                initial={{ scale: 0.6, opacity: 0 }}
+                initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{
                   type: "spring",
-                  stiffness: 260,
-                  damping: 18,
+                  stiffness: 120,
+                  damping: 20,
+                  delay: 0.4,
                 }}
                 className="mb-6 flex justify-center xl:justify-start cursor-pointer"
               >
@@ -36,6 +37,7 @@ const Home = () => {
                   className="object-contain drop-shadow-lg"
                 />
               </motion.div>
+
 
               </div>
               <p className="max-w-[500px] mb-4 text-white/80">
